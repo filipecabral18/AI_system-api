@@ -1,0 +1,3 @@
+#@name getPrompts
+GET http://localhost:3333/prompts
+###
