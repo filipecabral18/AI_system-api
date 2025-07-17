@@ -9,7 +9,7 @@ datasource db {
 }
 
 model Video {
-  id            String   @id @default(cuid())
+  id            String   @id @default(uuid())
   name          String
   path          String
   transcription String?
@@ -17,7 +17,7 @@ model Video {
 }
 
 model Prompt {
-  id       String @id @default(cuid())
+  id       String @id @default(uuid())
   title    String
   template String
 }

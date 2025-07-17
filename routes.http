@@ -1,3 +1,23 @@
-#@name getPrompts
+# @name getPrompts
 GET http://localhost:3333/prompts
 ###
+# @name uploadVideo
+POST http://localhost:3333/videos
+Content-Type: multipart/form-data; boundary=--------------------------boundary
+
+
+----------------------------boundary
+Content-Disposition: form-data; name="file"; filename="music.mp3"
+Content-Type: audio/mpeg
+
+.music.mp3
+----------------------------boundary--
+
+###
+# @name create-transcription
+POST http://localhost:3333/videos/321a5e43-65a7-4b9c-b9d5-ac164aa1e62b/transcription
+Content-Type: application/json
+
+{
+  "prompt": "Music Brazilian Hype"
+}
