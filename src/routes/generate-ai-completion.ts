@@ -30,6 +30,7 @@ export async function generateAICompletionRoute(app: FastifyInstance) {
       model: 'gpt-4o-mini',
       temperature,
       messages: [{ role: 'user', content: promptMessage }],
+      stream: true,
     });
 
     return response;

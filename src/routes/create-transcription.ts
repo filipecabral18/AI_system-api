@@ -34,13 +34,13 @@ export async function createTranscriptionRoute(app: FastifyInstance) {
       prompt,
     });
 
-    await prisma.video.update({
+    const transcribe = await prisma.video.update({
       where: { id: videoId },
       data: {
         transcription: response.text,
       },
     });
 
-    return response.text;
+    return transcribe;
   });
 }
